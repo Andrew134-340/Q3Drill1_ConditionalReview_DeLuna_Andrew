@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drill 1</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    h2 {
+        color: #2e2e2e;
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
+    .calculator {
+        background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+        padding: 35px 45px;
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        width: 360px;
+        text-align: center;
+        border: 3px solid #ff9a8b;
+        transition: transform 0.3s ease;
+    }
+    .calculator:hover {
+        transform: scale(1.02);
+    }
+    p {
+        margin: 12px 0 6px;
+        color: #444;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 16px;
+        border: 2px solid #ffc2b3;
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: #fff8f3;
+        transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+    input[type="text"]:focus {
+        border-color: #ff6f61;
+        background-color: #ffffff;
+        outline: none;
+    }
+    button {
+        background: linear-gradient(to right, #ff6f61, #ff9472);
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.4s ease, transform 0.2s ease;
+    }
+    button:hover {
+        background: linear-gradient(to right, #ff9472, #f2709c);
+        transform: scale(1.03);
+    }
+    #average,
+    #result {
+        font-weight: bold;
+        font-size: 16px;
+        display: inline-block;
+        margin-top: 6px;
+        padding: 4px 10px;
+        border-radius: 6px;
+    }
+    #average {
+        color: #4a4a4a;
+        background-color: #ffe0e0;
+    }
+    #result.pass {
+        color: #155724;
+        background-color: #d4edda;
+    }
+    #result.fail {
+        color: #721c24;
+        background-color: #f8d7da;
+    }
+    .calculator p span {
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+</style>
+
+
+</head>
+
+<body>
+    <div class="calculator">
+        <h2>Simple Average Calculator</h2>
+
+        <p>Score 1:</p>
+        <input id="score1" type="text">
+
+        <p>Score 2:</p>
+        <input id="score2" type="text">
+
+        <button py-click="compute_average">COMPUTE</button>
+
+        <p>Average: <span id="average">-</span></p>
+        <p>Passed? <span id="result">-</span></p>
+    </div>
+
+    <script type="py" src="main.py"></script>
+</body>
+
+
+</html>
